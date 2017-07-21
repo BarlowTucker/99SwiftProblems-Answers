@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,7 +655,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SwiftProblems_99" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -676,18 +678,102 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Problem Runner View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ProblemRunnerViewController" customModule="SwiftProblems_99" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="888" height="484"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qhd-Bz-pYR">
+                                <rect key="frame" x="18" y="440" width="247" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="242" id="RuK-g3-s4X"/>
+                                </constraints>
+                                <popUpButtonCell key="cell" type="push" title="Problem 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="q8I-f1-prq" id="Opw-gx-a6T">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="cZV-eM-W1E">
+                                        <items>
+                                            <menuItem title="Problem 1" state="on" id="q8I-f1-prq"/>
+                                            <menuItem title="Problem 2" id="vYH-pQ-MBg" userLabel="Problem 2"/>
+                                            <menuItem title="Problem 3" id="wg5-vc-WkF" userLabel="Problem 3"/>
+                                            <menuItem title="Problem 4" id="ok7-Ac-nqr" userLabel="Problem 4"/>
+                                            <menuItem title="Problem 5" id="DQ8-Jj-VEx"/>
+                                            <menuItem title="Problem 6" id="Plz-jg-wGb"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="problemChanged:" target="XfG-lQ-9wD" id="z0T-PD-Kbl"/>
+                                    <binding destination="DTo-Mi-OCm" name="content" keyPath="arrangedObjects" id="BzA-iz-Nd4"/>
+                                    <binding destination="DTo-Mi-OCm" name="contentObjects" keyPath="arrangedObjects.value" previousBinding="BzA-iz-Nd4" id="ECg-UZ-SgZ"/>
+                                    <binding destination="DTo-Mi-OCm" name="contentValues" keyPath="arrangedObjects.name" previousBinding="ECg-UZ-SgZ" id="ssI-3h-fic"/>
+                                </connections>
+                            </popUpButton>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gJN-oi-Zdq">
+                                <rect key="frame" x="264" y="436" width="254" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="242" id="dvT-0u-Acz"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iAF-Ka-Y4c">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="runClicked:" target="XfG-lQ-9wD" id="OUh-Ts-Onb"/>
+                                </connections>
+                            </button>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysG-Ht-Gdd">
+                                <rect key="frame" x="20" y="20" width="848" height="415"/>
+                                <clipView key="contentView" id="pLF-19-eot">
+                                    <rect key="frame" x="1" y="1" width="846" height="413"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Ehc-f2-SUD">
+                                            <rect key="frame" x="0.0" y="0.0" width="846" height="413"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="846" height="413"/>
+                                            <size key="maxSize" width="853" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="zAU-IS-nea">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ZD6-zU-oLa">
+                                    <rect key="frame" x="831" y="1" width="16" height="413"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qhd-Bz-pYR" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="7nS-Zj-8O3"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gJN-oi-Zdq" secondAttribute="trailing" constant="20" id="BGN-19-Mpv"/>
+                            <constraint firstAttribute="trailing" secondItem="ysG-Ht-Gdd" secondAttribute="trailing" constant="20" id="DZc-o6-Lij"/>
+                            <constraint firstItem="ysG-Ht-Gdd" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="X55-fF-PpK"/>
+                            <constraint firstItem="gJN-oi-Zdq" firstAttribute="centerY" secondItem="qhd-Bz-pYR" secondAttribute="centerY" id="ZXs-mG-8hs"/>
+                            <constraint firstItem="ysG-Ht-Gdd" firstAttribute="top" secondItem="qhd-Bz-pYR" secondAttribute="bottom" constant="8" id="bSa-ep-9Sz"/>
+                            <constraint firstItem="qhd-Bz-pYR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="bls-Tc-Dfc"/>
+                            <constraint firstAttribute="bottom" secondItem="ysG-Ht-Gdd" secondAttribute="bottom" constant="20" id="d3x-w7-CKG"/>
+                            <constraint firstItem="gJN-oi-Zdq" firstAttribute="leading" secondItem="qhd-Bz-pYR" secondAttribute="trailing" constant="8" id="g64-bo-1HP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="arrayController" destination="DTo-Mi-OCm" id="lVh-b1-rJO"/>
+                        <outlet property="problemSelector" destination="qhd-Bz-pYR" id="WMZ-fn-bwt"/>
+                        <outlet property="solutionTextView" destination="Ehc-f2-SUD" id="Wmb-Hn-G8d"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <arrayController id="DTo-Mi-OCm"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="760"/>
         </scene>
     </scenes>
 </document>
