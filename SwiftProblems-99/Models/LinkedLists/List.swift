@@ -167,3 +167,125 @@ public extension List where T:Equatable {
         }
     }
 }
+
+//MARK: - Problem 9
+public extension List where T:Equatable {
+//    public func pack() -> List<List<T>> {
+//        
+//    }
+}
+
+//MARK: - Problem 10
+public extension List where T:Equatable {
+    
+}
+
+//MARK: - Problem 11
+public extension List where T:Equatable {
+    
+}
+
+//MARK: - Problem 12
+public extension List {
+    
+}
+
+//MARK: - Problem 13
+public extension List where T:Equatable {
+    
+}
+
+//MARK: - Problem 14
+public extension List {
+    
+}
+
+//MARK: - Problem 15
+public extension List {
+    
+}
+
+//MARK: - Problem 16
+public extension List {
+    
+}
+
+//MARK: - Problem 17
+public extension List {
+    
+}
+
+//MARK: - Problem 18
+public extension List {
+    
+}
+
+//MARK: - Problem 19
+public extension List {
+    
+}
+
+//MARK: - Problem 20
+public extension List {
+    
+}
+
+//MARK: - Problem 21
+public extension List {
+    
+}
+
+//MARK: - Problem 22
+public extension List {
+    
+}
+
+//MARK: - Problem 23
+public extension List {
+    
+}
+
+//MARK: - Problem 24
+public extension List {
+    
+}
+
+//MARK: - Problem 25
+public extension List {
+    
+}
+
+//MARK: - Problem 26
+public extension List {
+    
+}
+
+//MARK: - Problem 26B
+public extension List {
+    
+}
+
+//MARK: - Problem 27
+public extension List {
+    
+}
+
+//MARK: - Problem 27B
+public extension List {
+    
+}
+
+//MARK: - Problem 28
+public extension List {
+    
+}
+
+//MARK: - Problem 28B
+public extension List {
+    
+}
+
+//MARK: - Apendix1A
+//extension List: SequenceType {
+//    
+//}

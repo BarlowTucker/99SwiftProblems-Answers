@@ -35,6 +35,26 @@ class ProblemRunnerViewController: NSViewController {
             case 6: answer = self.runSix()
             case 7: answer = self.runSeven()
             case 8: answer = self.runEight()
+            case 9: answer = self.run9()
+            case 10: answer = self.run10()
+            case 11: answer = self.run11()
+            case 12: answer = self.runEight()
+            case 13: answer = self.runEight()
+            case 14: answer = self.runEight()
+            case 15: answer = self.runEight()
+            case 16: answer = self.runEight()
+            case 17: answer = self.runEight()
+            case 18: answer = self.runEight()
+            case 19: answer = self.runEight()
+            case 20: answer = self.runEight()
+            case 21: answer = self.runEight()
+            case 22: answer = self.runEight()
+            case 23: answer = self.runEight()
+            case 24: answer = self.runEight()
+            case 25: answer = self.runEight()
+            case 26: answer = self.runEight()
+            case 27: answer = self.runEight()
+            case 28: answer = self.runEight()
             case 54: answer = self.runFiftyFour()
             default: answer = "Unknown Problem Selected"
         }
@@ -95,6 +115,16 @@ class ProblemRunnerViewController: NSViewController {
         
         return "Problem 8:\n--- The list (a, a, a, a, b, c, c, a, a, d, e, e, e, e) compressed is \(list)"
     }
+    private func run9() -> String {
+        return "Problem 9:--- Not Implemented Yet"
+    }
+    private func run10() -> String {
+        return "Problem 10:--- Not Implemented Yet"
+    }
+    private func run11() -> String {
+        return "Problem 11:--- Not Implemented Yet"
+    }
+    
     //MARK: - Binary Trees
     private func runFiftyFour() -> String {
         let balanced = BTree("a", left: BTree("b", left: BTree("d"), right: BTree("e")), right: BTree("c", right: BTree("f", left: BTree("g"))))

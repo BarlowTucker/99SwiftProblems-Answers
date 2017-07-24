@@ -129,7 +129,7 @@
 		0CDCCA661EFDB88900684198 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0CDCCA6A1EFDB97300684198 /* LinkedList */,
+				0CDCCA6B1EFDB9A500684198 /* List.swift */,
 				0CAD370A1F19644B000F619D /* BTree.swift */,
 			);
 			name = Models;
@@ -158,14 +158,6 @@
 				0CDCCA3B1EFDB7BE00684198 /* AppDelegate.swift */,
 			);
 			name = Other;
-			sourceTree = "<group>";
-		};
-		0CDCCA6A1EFDB97300684198 /* LinkedList */ = {
-			isa = PBXGroup;
-			children = (
-				0CDCCA6B1EFDB9A500684198 /* List.swift */,
-			);
-			name = LinkedList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
